@@ -1,0 +1,116 @@
+server:
+  port: 8080
+  assets-path: /app/assets
+
+theme:
+  background-color: 225 14 15
+  primary-color: 157 47 65
+  contrast-multiplier: 1.1
+
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+
+          - type: clock
+            hour-format: 24h
+            timezones:
+              - timezone: Asia/Taipei
+                label: Taipei
+              - timezone: Asia/Tokyo
+                label: Tokyo
+              - timezone: America/New_York
+                label: New York
+              - timezone: Europe/London
+                label: London
+              - timezone: Europe/Berlin
+                label: Berlin
+
+          - type: bookmarks
+            groups:
+              - links:
+                - title: Google Sheet
+                  url: https://docs.google.com/spreadsheets/u/0/
+                  icon: si:googlesheets
+              - title: 開發者工具
+                links:
+                - title: IT Tools
+                  url: http://localhost:8081/
+                  icon: https://github.com/CorentinTh/it-tools/blob/main/public/android-chrome-512x512.png?raw=true
+              - title: AI 工具
+                color: 10 70 50
+                links:
+                - title: Perplexity
+                  url: https://www.perplexity.ai/
+                  icon: si:perplexity
+                - title: ChatGPT
+                  url: https://openai.com/chatgpt/
+                  icon: si:openai
+                - title: Leonardo AI
+                  url: https://leonardo.ai/
+          
+          - type: monitor
+            cache: 1m
+            title: Services
+            sites:
+            - title: Vaultwarden
+              url: https://vault.madaowebsite.com/
+              icon: si:vaultwarden
+              allow-insecure: true
+
+      - size: full
+        widgets:
+          - type: search
+            search-engine: google
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+
+          - type: hacker-news
+
+          - type: videos
+            channels:
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCv6J_jJa8GJqFwQNgNrMuww # ServeTheHome
+              - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
+
+          - type: reddit
+            subreddit: selfhosted
+
+      - size: small
+        widgets:
+          - type: weather
+            location: Taichang, Taiwan
+            hour-format: 24h
+            show-area-name: true
+
+          - type: stocks
+            stocks:
+              - symbol: SPY
+                name: S&P 500
+              - symbol: BTC-USD
+                name: Bitcoin
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: MSFT
+                name: Microsoft
+              - symbol: GOOGL
+                name: Google
+              - symbol: AMD
+                name: AMD
+              - symbol: RDDT
+                name: Reddit
+
+  - name: IT-Tools
+    columns:
+    - size: full
+      widgets:
+      - type: iframe
+        source: http://localhost:8081/
+        height: 1024
+    
