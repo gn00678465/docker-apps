@@ -37,7 +37,7 @@ pages:
               - title: 開發者工具
                 links:
                 - title: IT Tools
-                  url: http://localhost:8081/
+                  url: http://it-tools.localhost/
                   icon: https://github.com/CorentinTh/it-tools/blob/main/public/android-chrome-512x512.png?raw=true
               - title: AI 工具
                 color: 10 70 50
@@ -111,6 +111,24 @@ pages:
     - size: full
       widgets:
       - type: iframe
-        source: http://localhost:8081/
+        source: http://it-tools.localhost/
         height: 1024
     
+  - name: Development
+    columns:
+    - size: small
+      widgets:
+    - size: full
+      widgets:
+      - type: videos
+        style: grid-cards
+        limit: 12
+        channels:
+          - UCwXdFgeE9KYzlDdR7TG9cMw
+      - type: videos
+        style: grid-cards
+        limit: 12
+        channels:
+          - UCmXmlB4-HJytD7wek0Uo97A
+    - size: small
+      widgets:

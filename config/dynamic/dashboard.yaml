@@ -1,0 +1,15 @@
+http:
+  # Add the router
+  routers:
+    traefik-dashboard:
+      entryPoints:
+      - web
+      - web-secure
+      service: dashboard@internal
+      rule: "Host(`dashboard.localhost`)"
+    traefik-dashboard-api:
+      entryPoints:
+      - web
+      - web-secure
+      service: api@internal
+      rule: "Host(`dashboard.localhost`) && PathPrefix(`/api`)"

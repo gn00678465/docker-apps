@@ -1,15 +1,22 @@
 http:
-  # Add the router
   routers:
-    traefik-dashboard:
+    glance:
       entryPoints:
-      - web
-      - web-secure
-      service: dashboard@internal
-      rule: "Host(`apps.localhost`)"
-    traefik-dashboard-api:
+        - web
+      rule: "Host(`glance.localhost`) || HostRegexp(`glance.localhost/.*`)"
+      service: "glance-service"
+    it-tools:
       entryPoints:
-      - web
-      - web-secure
-      service: api@internal
-      rule: "Host(`apps.localhost`) && PathPrefix(`/api`)"
+        - web
+      rule: "Host(`it-tools.localhost`)"
+      service: "it-tools-service"
+
+  services:
+    glance-service:
+      loadBalancer:
+        servers:
+        - url: "http://glance"
+    it-tools-service:
+      loadBalancer:
+        servers:
+        - url: "http://it-tools"

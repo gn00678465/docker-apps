@@ -13,10 +13,17 @@ services:
       test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8080/ping || exit 1"]
       interval: 3s
       retries: 10
+    network_mode: bridge
+    links:
+      - glance
+      - it-tools
+    restart: unless-stopped
   glance:
     image: glanceapp/glance
     container_name: glance
     restart: unless-stopped
+    depends_on:
+      - reverse-proxy
     ports:
       - 8090:8080
     volumes:
@@ -24,12 +31,16 @@ services:
       - ./assets:/app/assets
       - /etc/TZ:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    network_mode: bridge
   it-tools:
     image: 'ghcr.io/corentinth/it-tools:latest'
     ports:
       - '8091:80'
     restart: unless-stopped
+    depends_on:
+      - reverse-proxy
     container_name: it-tools
+    network_mode: bridge
   # cyberchef:
   #   image: 'ghcr.io/gchq/cyberchef:latest'
   #   ports:
