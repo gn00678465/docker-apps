@@ -1,0 +1,16 @@
+http:
+  # Add the router
+  routers:
+    home:
+      entryPoints:
+      - web
+      - web-secure
+      service: glance-service
+      rule: "Host(`home.localhost`)"
+      tls: false
+
+  services:
+    glance-service:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8090"

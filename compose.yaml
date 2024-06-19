@@ -1,19 +1,33 @@
 services:
+  reverse-proxy:
+    image: traefik:latest
+    container_name: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "./config/traefik.yml:/etc/traefik/traefik.yml"
+      - "./config/dynamic/:/etc/traefik/dynamic"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8080/ping || exit 1"]
+      interval: 3s
+      retries: 10
   glance:
     image: glanceapp/glance
     container_name: glance
     restart: unless-stopped
     ports:
-      - 8080:8080
+      - 8090:8080
     volumes:
-      - ./glance.yml:/app/glance.yml
+      - ./config/glance.yml:/app/glance.yml
       - ./assets:/app/assets
       - /etc/TZ:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
   it-tools:
     image: 'ghcr.io/corentinth/it-tools:latest'
     ports:
-      - '8081:80'
+      - '8091:80'
     restart: unless-stopped
     container_name: it-tools
   # cyberchef:
