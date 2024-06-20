@@ -118,6 +118,23 @@ pages:
     columns:
     - size: small
       widgets:
+        - type: rss
+          limit: 500
+          title: Github Daily Trending
+          collapse-after: 5
+          style: vertical-cards
+          feeds:
+            - url: https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml
+              title: Github Daily Trending All
+        - type: rss
+          limit: 500
+          title: Github Weekly Trending
+          collapse-after: 5
+          style: vertical-cards
+          feeds:
+            - url: https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
+              title: Github Weekly Trending All
+
     - size: full
       widgets:
       - type: videos
@@ -132,3 +149,7 @@ pages:
           - UCmXmlB4-HJytD7wek0Uo97A
     - size: small
       widgets:
+      - type: releases
+        repositories:
+          - wandb/openui
+          - ollama/ollama

@@ -22,10 +22,8 @@ services:
     image: glanceapp/glance
     container_name: glance
     restart: unless-stopped
-    depends_on:
-      - reverse-proxy
     ports:
-      - 8090:8080
+      - 8080:8080
     volumes:
       - ./config/glance.yml:/app/glance.yml
       - ./assets:/app/assets
@@ -37,8 +35,6 @@ services:
     ports:
       - '8091:80'
     restart: unless-stopped
-    depends_on:
-      - reverse-proxy
     container_name: it-tools
     network_mode: bridge
   # cyberchef:
