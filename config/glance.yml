@@ -50,6 +50,9 @@ pages:
                   icon: si:openai
                 - title: Leonardo AI
                   url: https://leonardo.ai/
+                - title: v0
+                  url: https://v0.dev/
+                  icon: si:vercel
           
           - type: monitor
             cache: 1m
@@ -153,3 +156,14 @@ pages:
         repositories:
           - wandb/openui
           - ollama/ollama
+      - type: releases
+        repositories:
+          - facebook/react
+          - vercel/next.js
+          - vuejs/core
+          - vitejs/vite
+          - flutter/flutter
+      - type: releases
+        repositories:
+          - supabase/supabase
+          - powersync-ja/powersync-js
