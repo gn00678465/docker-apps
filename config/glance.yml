@@ -30,7 +30,8 @@ pages:
 
           - type: bookmarks
             groups:
-              - links:
+              - title: Google
+                links:
                 - title: Google Sheet
                   url: https://docs.google.com/spreadsheets/u/0/
                   icon: si:googlesheets
@@ -50,6 +51,7 @@ pages:
                   icon: si:openai
                 - title: Leonardo AI
                   url: https://leonardo.ai/
+                  icon: assets/leonardo-ai.webp
                 - title: v0
                   url: https://v0.dev/
                   icon: si:vercel
@@ -129,32 +131,46 @@ pages:
           feeds:
             - url: https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml
               title: Github Daily Trending All
-        - type: rss
-          limit: 500
-          title: Github Weekly Trending
-          collapse-after: 5
-          style: vertical-cards
-          feeds:
-            - url: https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
-              title: Github Weekly Trending All
-
+        - type: bookmarks
+          groups:
+            - title: Database
+              links:
+              - title: MongoDB
+                url: https://www.mongodb.com/
+                icon: si:mongodb
+              - title: supabase
+                url: https://supabase.com/
+                icon: si:supabase
+            - title: Deployment
+              links:
+              - title: Zeabur
+                url: https://zeabur.com/
+                icon: https://styles.redditmedia.com/t5_az73n5/styles/communityIcon_wsc9jjd6elnc1.png
+            
     - size: full
       widgets:
       - type: videos
         style: grid-cards
-        limit: 12
+        collapse-after-rows: 2
+        limit: 18
         channels:
           - UCwXdFgeE9KYzlDdR7TG9cMw
       - type: videos
         style: grid-cards
-        limit: 12
+        collapse-after-rows: 2
+        limit: 18
         channels:
           - UCmXmlB4-HJytD7wek0Uo97A
+      - type: videos
+        style: grid-cards
+        collapse-after-rows: 2
+        limit: 18
+        channels:
+          - UCkjoHfkLEy7ZT4bA2myJ8xA
     - size: small
       widgets:
       - type: releases
         repositories:
-          - wandb/openui
           - ollama/ollama
       - type: releases
         repositories:
@@ -165,5 +181,6 @@ pages:
           - flutter/flutter
       - type: releases
         repositories:
+          - Infisical/infisical
           - supabase/supabase
           - powersync-ja/powersync-js
