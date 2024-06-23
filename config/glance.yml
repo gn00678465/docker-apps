@@ -141,6 +141,9 @@ pages:
               - title: supabase
                 url: https://supabase.com/
                 icon: si:supabase
+              - title: infisical
+                url: https://infisical.com/
+                icon: assets/infisical.png
             - title: Deployment
               links:
               - title: Zeabur
