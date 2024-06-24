@@ -133,6 +133,14 @@ pages:
               title: Github Daily Trending All
         - type: bookmarks
           groups:
+            - title: Platform
+              links:
+              - title: GCP
+                url: https://console.cloud.google.com/
+                icon: si:googlecloud
+              - title: AWS
+                url: https://aws.amazon.com/
+                icon: si:amazonwebservices
             - title: Database
               links:
               - title: MongoDB
@@ -149,6 +157,11 @@ pages:
               - title: Zeabur
                 url: https://zeabur.com/
                 icon: https://styles.redditmedia.com/t5_az73n5/styles/communityIcon_wsc9jjd6elnc1.png
+            - title: Learn
+              links:
+              - title: Rust Course
+                url: https://course.rs/about-book.html
+                icon: si:rust
             
     - size: full
       widgets:
@@ -170,18 +183,22 @@ pages:
         limit: 18
         channels:
           - UCkjoHfkLEy7ZT4bA2myJ8xA
+    
     - size: small
       widgets:
       - type: releases
         repositories:
           - ollama/ollama
       - type: releases
+        limit: 20
+        collapse-after: 5
         repositories:
           - facebook/react
-          - vercel/next.js
           - vuejs/core
           - vitejs/vite
           - flutter/flutter
+          - vercel/next.js
+          - nestjs/nest
       - type: releases
         repositories:
           - Infisical/infisical
