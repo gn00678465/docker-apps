@@ -43,12 +43,15 @@ pages:
               - title: AI 工具
                 color: 10 70 50
                 links:
-                - title: Perplexity
-                  url: https://www.perplexity.ai/
-                  icon: si:perplexity
                 - title: ChatGPT
                   url: https://openai.com/chatgpt/
                   icon: si:openai
+                - title: Perplexity
+                  url: https://www.perplexity.ai/
+                  icon: si:perplexity
+                - title: claude.ai
+                  url: https://claude.ai/
+                  icon: si:anthropic
                 - title: Leonardo AI
                   url: https://leonardo.ai/
                   icon: assets/leonardo-ai.webp
@@ -110,14 +113,6 @@ pages:
                 name: AMD
               - symbol: RDDT
                 name: Reddit
-
-  - name: IT-Tools
-    columns:
-    - size: full
-      widgets:
-      - type: iframe
-        source: http://it-tools.localhost/
-        height: 1024
     
   - name: Development
     columns:
@@ -159,9 +154,14 @@ pages:
                 icon: https://styles.redditmedia.com/t5_az73n5/styles/communityIcon_wsc9jjd6elnc1.png
             - title: Learn
               links:
+              - title: Project Based Learning
+                links: https://github.com/practical-tutorials/project-based-learning
               - title: Rust Course
                 url: https://course.rs/about-book.html
                 icon: si:rust
+              - title: Go with Tests
+                url: https://quii.gitbook.io/learn-go-with-tests
+                icon: si:go
             
     - size: full
       widgets:
@@ -183,6 +183,12 @@ pages:
         limit: 18
         channels:
           - UCkjoHfkLEy7ZT4bA2myJ8xA
+      - type: videos
+        style: grid-cards
+        collapse-after-rows: 2
+        limit: 18
+        channels:
+        - UCpWAHyvsw6-Hd3FMcKIHGCA
     
     - size: small
       widgets:
